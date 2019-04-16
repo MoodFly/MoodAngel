@@ -25,7 +25,7 @@ public class AngelTime extends AnAction {
                 .append("获取当天开始时间 :").append((LocalDateTime.of(LocalDate.now(), LocalTime.MIN)).format(DateTimeFormatter.ofPattern(defaultDateTimeFormatter))).append("\n")
                 .append("获取当天结束时间 :").append((LocalDateTime.of(LocalDate.now(), LocalTime.MAX)).format(DateTimeFormatter.ofPattern(defaultDateTimeFormatter))).append("\n")
                 .append("获取本月开始时间:").append((LocalDateTime.of(LocalDateTime.now().getYear(),LocalDateTime.now().getMonth(),1,0,0)).format(DateTimeFormatter.ofPattern(defaultDateTimeFormatter))).append("\n")
-                .append("获取本月结束时间:").append((LocalDateTime.now().with(TemporalAdjusters.lastDayOfMonth())).format(DateTimeFormatter.ofPattern(defaultDateTimeFormatter))).append("\n");
+                .append("获取本月结束时间:").append((LocalDateTime.of(LocalDate.now().with(TemporalAdjusters.lastDayOfMonth()),LocalTime.MAX)).format(DateTimeFormatter.ofPattern(defaultDateTimeFormatter))).append("\n");
         Messages.showMessageDialog(project, stringBuffer.toString(), title, Messages.getInformationIcon());
     }
 }
